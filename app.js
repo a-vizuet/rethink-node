@@ -1,14 +1,12 @@
 const app = require('express')();
-const rethink = require('rethinkdb');
+const bodyParser = require('body-parser');
+const testRoutes = require('./components/test/testRoutes');
 
-app.all('/', async (req, res) => {
-  try {
-    const allData = await rethink.table('test').getAll().run(require('./index')());
-    
-    res.send({allData});
-  } catch (error) {
-    res.send({error: error.msg});
-  }
-});
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+
+app.use('/api', [
+  testRoutes
+]);
 
 module.exports = app;
