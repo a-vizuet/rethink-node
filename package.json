@@ -1,0 +1,13 @@
+{
+  "name": "rethink-node",
+  "version": "1.0.0",
+  "description": "Testing how RethingDB works with NodeJS",
+  "main": "index.js",
+  "repository": "https://github.com/megustalafantabienfria/rethink-node",
+  "author": "megustalafantabienfria (Angel Vizuet)",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.16.4",
+    "rethinkdb": "^2.3.3"
+  }
+}
